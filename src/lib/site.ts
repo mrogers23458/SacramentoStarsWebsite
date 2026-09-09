@@ -18,6 +18,17 @@ export const navItems = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
+export const raffle = {
+  title: "Support a Player, Win a Wagon",
+  tagline: "Stars fall fundraiser",
+  ticketPrice: "$[TICKET PRICE] per ticket",
+  drawingDate: "[DRAWING DATE]",
+  prizeDescription:
+    "A wagon stocked with wine, spirits, and mixers, put together by Stars families. You must be 21 or older to claim this prize.",
+  howToPay:
+    "This form does not take payment. Pay by cash, check, or Venmo through a coach or team parent, and mention your player.",
+};
+
 export const donationLevels: {
   amount: number;
   label: string;
