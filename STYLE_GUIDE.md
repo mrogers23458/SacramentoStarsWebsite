@@ -9,11 +9,9 @@ Use this file as the design contract. If a change conflicts with this guide, fol
 ## Product rules
 
 1. This is a **public team website**, not a raffle admin app.
-2. **Do not** add raffle tickets, packages, QR codes, order checkout, ticket lookup, or prize drawing UI.
-3. `/raffle` stays a **Coming soon** placeholder until a human explicitly asks to build the fundraiser.
-4. **Do not invent colors.** Only the hex values in [Color tokens](#color-tokens) are allowed (plus transparent overlays of those colors, e.g. `border-white/15`).
-5. **Mobile first.** Write the default CSS for a 320px-wide phone. Add layout at the breakpoints below; never start from a desktop grid and collapse down.
-6. No dark-mode theme. The live brand screens are light page + navy header/footer.
+2. **Do not invent colors.** Only the hex values in [Color tokens](#color-tokens) are allowed (plus transparent overlays of those colors, e.g. `border-white/15`).
+3. **Mobile first.** Write the default CSS for a 320px-wide phone. Add layout at the breakpoints below; never start from a desktop grid and collapse down.
+4. No dark-mode theme. The live brand screens are light page + navy header/footer.
 
 ---
 
