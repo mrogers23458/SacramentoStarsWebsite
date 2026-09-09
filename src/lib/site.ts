@@ -21,13 +21,24 @@ export const navItems = [
 export const raffle = {
   title: "Support a Player, Win a Wagon",
   tagline: "Stars fall fundraiser",
-  ticketPrice: "$[TICKET PRICE] per ticket",
   drawingDate: "[DRAWING DATE]",
   prizeDescription:
     "A wagon stocked with wine, spirits, and mixers, put together by Stars families. You must be 21 or older to claim this prize.",
+  venmoHandle: "@Stars10ubaseball",
   howToPay:
-    "This form does not take payment. Pay by cash, check, or Venmo through a coach or team parent, and mention your player.",
+    "Send payment via Venmo to @Stars10ubaseball. Include your name and the player you're supporting in the Venmo note.",
 };
+
+export const raffleTicketPackages: {
+  tickets: number;
+  price: number;
+  label: string;
+  badge?: string;
+}[] = [
+  { tickets: 1, price: 10, label: "1 ticket" },
+  { tickets: 3, price: 25, label: "3 tickets", badge: "Save $5" },
+  { tickets: 10, price: 75, label: "10 tickets", badge: "Best value" },
+];
 
 export const donationLevels: {
   amount: number;

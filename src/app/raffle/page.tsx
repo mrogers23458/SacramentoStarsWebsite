@@ -23,7 +23,8 @@ export default function RafflePage() {
               Buy a ticket
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-stars-muted">
-              {raffle.ticketPrice}. {raffle.howToPay}
+              $10 for 1 ticket, $25 for 3 tickets, or $75 for 10 tickets.{" "}
+              {raffle.howToPay}
             </p>
           </article>
           <article className="card-panel">
@@ -59,8 +60,12 @@ export default function RafflePage() {
                 to win this raffle. ID may be required to claim the prize.
               </li>
               <li>
-                This form records your entry — it does not charge or store a
-                payment. Bring or send payment separately.
+                This form does not process payment. Send your ticket payment
+                via Venmo to{" "}
+                <strong className="text-stars-navy-heading">
+                  {raffle.venmoHandle}
+                </strong>{" "}
+                and include your name and player in the note.
               </li>
               <li>
                 Naming a player lets that player&apos;s team get credit for
