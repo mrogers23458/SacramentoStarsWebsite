@@ -6,11 +6,15 @@ import { raffle, raffleTicketPackages } from "@/lib/site";
 
 export function RaffleForm() {
   const [tickets, setTickets] = useState<number>(raffleTicketPackages[0].tickets);
-  const [status, setStatus] = useState<"idle" | "copied" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
+    "idle",
+  );
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const data = new FormData(form);
     const firstName = String(data.get("firstName") || "").trim();
     const lastName = String(data.get("lastName") || "").trim();
     const phone = String(data.get("phone") || "").trim();
@@ -22,16 +26,41 @@ export function RaffleForm() {
 
     if (!firstName || !lastName || !phone || !email || !player || !selectedPackage) {
       setStatus("error");
+      setErrorMessage("Please choose a package and fill in every field.");
       return;
     }
 
-    const body = `Raffle entry\nName: ${firstName} ${lastName}\nPhone: ${phone}\nEmail: ${email}\nSupporting player: ${player}\nPackage: ${selectedPackage.label} ($${selectedPackage.price})\nPaid via Venmo to ${raffle.venmoHandle}: [ ] yes  [ ] not yet`;
+    setStatus("submitting");
+    setErrorMessage(null);
 
     try {
-      await navigator.clipboard.writeText(body);
-      setStatus("copied");
-    } catch {
+      const response = await fetch("/api/raffle", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          phone,
+          email,
+          player,
+          packageLabel: selectedPackage.label,
+          packagePrice: selectedPackage.price,
+        }),
+      });
+
+      if (!response.ok) {
+        const result = await response.json().catch(() => null);
+        throw new Error(result?.error || "Could not save your entry.");
+      }
+
+      setStatus("success");
+      form.reset();
+      setTickets(raffleTicketPackages[0].tickets);
+    } catch (error) {
       setStatus("error");
+      setErrorMessage(
+        error instanceof Error ? error.message : "Could not save your entry.",
+      );
     }
   }
 
@@ -135,20 +164,17 @@ export function RaffleForm() {
           required
         />
       </div>
-      <Button type="submit" variant="accent">
-        Copy entry
+      <Button type="submit" variant="accent" disabled={status === "submitting"}>
+        {status === "submitting" ? "Submitting…" : "Submit entry"}
       </Button>
-      {status === "copied" ? (
+      {status === "success" ? (
         <p className="text-sm text-stars-navy-heading">
-          Entry copied. Send it to a coach or team parent, and pay via Venmo
-          to {raffle.venmoHandle} to complete your entry.
+          Entry submitted. Pay via Venmo to {raffle.venmoHandle} (include your
+          name and player in the note) to complete your entry.
         </p>
       ) : null}
       {status === "error" ? (
-        <p className="text-sm text-stars-red">
-          Please choose a package and fill in every field before copying your
-          entry.
-        </p>
+        <p className="text-sm text-stars-red">{errorMessage}</p>
       ) : null}
     </form>
   );
