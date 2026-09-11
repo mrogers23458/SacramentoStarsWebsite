@@ -18,7 +18,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} ${site.ageGroup}`,
+    default: `${site.name} — Natomas Travel Baseball`,
     template: `%s · ${site.name}`,
   },
   description: site.description,

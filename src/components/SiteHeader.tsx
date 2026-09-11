@@ -24,7 +24,7 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-stars-navy/20 bg-stars-navy text-stars-white">
+    <header className="sticky top-0 z-40 bg-stars-navy text-stars-white">
       <div className="page-wrap flex items-center gap-3 py-3 se:gap-4 md:py-3.5">
         <Link
           href="/"
@@ -36,7 +36,7 @@ export function SiteHeader() {
           />
           <span className="min-w-0">
             <span className="block text-[0.65rem] font-semibold tracking-[0.18em] text-stars-mist uppercase">
-              {site.name} {site.ageGroup}
+              Natomas · {site.ageGroup}
             </span>
             <span className="block truncate font-serif text-xl leading-tight font-bold se:text-2xl">
               {site.shortName}
@@ -44,10 +44,7 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav
-          className="hidden items-center gap-1 lg:flex"
-          aria-label="Primary"
-        >
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
           {navItems.map((item) => {
             const active = pathname === item.href;
             return (
@@ -64,6 +61,16 @@ export function SiteHeader() {
               </Link>
             );
           })}
+          <Link
+            href="/contact"
+            className={`rounded-btn px-3 py-2 text-sm font-bold ${
+              pathname === "/contact"
+                ? "bg-stars-red text-stars-white"
+                : "bg-stars-red text-stars-white hover:bg-[#8d2b2c]"
+            }`}
+          >
+            Become a Sponsor
+          </Link>
         </nav>
 
         <button
@@ -103,6 +110,12 @@ export function SiteHeader() {
                 </Link>
               );
             })}
+            <Link
+              href="/contact"
+              className="flex min-h-12 items-center justify-center rounded-btn bg-stars-red px-4 text-base font-bold text-stars-white"
+            >
+              Become a Sponsor
+            </Link>
           </div>
         </nav>
       ) : null}

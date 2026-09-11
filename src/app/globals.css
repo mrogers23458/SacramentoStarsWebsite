@@ -18,6 +18,7 @@
   --stars-mist-light: #bfc6d6;
   --stars-logo-red: #a52934;
   --stars-logo-blue: #143da7;
+  --stars-gold: #f5c842;
 }
 
 @theme inline {
@@ -38,6 +39,7 @@
   --color-stars-mist-light: var(--stars-mist-light);
   --color-stars-logo-red: var(--stars-logo-red);
   --color-stars-logo-blue: var(--stars-logo-blue);
+  --color-stars-gold: var(--stars-gold);
 
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
@@ -152,6 +154,24 @@ body {
   transform: translateY(1px);
 }
 
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
+}
+
+.hp-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .btn-primary {
   background: var(--stars-navy);
   color: var(--stars-white);
@@ -262,6 +282,112 @@ body {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 0.28rem 0.65rem;
+}
+
+.team-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .team-tabs {
+    max-width: 28rem;
+  }
+}
+
+.team-tab {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-btn);
+  border: 2px solid var(--stars-navy);
+  background: var(--stars-white);
+  color: var(--stars-navy);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.65rem 0.75rem;
+}
+
+.team-tab-red[aria-current="page"] {
+  border-color: var(--stars-red);
+  background: var(--stars-red);
+  color: var(--stars-white);
+}
+
+.team-tab-blue[aria-current="page"] {
+  border-color: var(--stars-logo-blue);
+  background: var(--stars-logo-blue);
+  color: var(--stars-white);
+}
+
+.team-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.55rem;
+}
+
+.team-chip-red {
+  background: var(--stars-red);
+  color: var(--stars-white);
+}
+
+.team-chip-blue {
+  background: var(--stars-logo-blue);
+  color: var(--stars-white);
+}
+
+.event-complete {
+  background: color-mix(in srgb, var(--stars-white) 88%, var(--stars-rose));
+}
+
+.event-card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.event-paint-slash {
+  position: absolute;
+  left: -12%;
+  right: -12%;
+  top: 58%;
+  z-index: 20;
+  height: 0.75rem;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #8d2b2c 6%,
+    var(--stars-red) 22%,
+    #c44546 48%,
+    var(--stars-red) 72%,
+    #8d2b2c 92%,
+    transparent 100%
+  );
+  transform: rotate(-8deg);
+  opacity: 0.9;
+  pointer-events: none;
+  border-radius: 40% 12px 50% 8px;
+  box-shadow: 0 1px 0 rgba(160, 50, 51, 0.25);
+}
+
+.event-result-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: var(--stars-navy);
+  color: var(--stars-white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.6rem;
 }
 
 @media (min-width: 768px) {

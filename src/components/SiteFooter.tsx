@@ -11,7 +11,7 @@ export function SiteFooter() {
           <div>
             <p className="font-serif text-2xl font-bold">{site.name}</p>
             <p className="mt-1 text-sm text-stars-mist">
-              {site.ageGroup} baseball · Est. {site.founded}
+              {site.city} · Est. {site.founded}
             </p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-stars-mist">
               {site.description}
@@ -28,34 +28,66 @@ export function SiteFooter() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-sm font-semibold text-stars-white hover:text-stars-rose"
+                  className="text-sm font-semibold text-stars-white hover:text-stars-gold"
                 >
                   {item.label}
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="/contact"
+                className="text-sm font-semibold text-stars-white hover:text-stars-gold"
+              >
+                Become a Sponsor
+              </Link>
+            </li>
           </ul>
         </div>
 
         <div>
           <p className="text-xs font-bold tracking-[0.16em] text-stars-mist uppercase">
-            Support
+            Follow us
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-stars-mist">
-            Donations keep uniforms, field time, and tournament play within reach
-            for every family.
-          </p>
+          <ul className="mt-3 grid gap-2 text-sm font-semibold">
+            <li>
+              <a
+                href={site.instagram}
+                className="hover:text-stars-gold"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {site.instagramHandle}
+              </a>
+            </li>
+            <li>
+              <a
+                href={site.facebook}
+                className="hover:text-stars-gold"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Sacramento Stars on Facebook
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${site.email}`} className="hover:text-stars-gold">
+                {site.email}
+              </a>
+            </li>
+          </ul>
           <Link
-            href="/donate"
+            href="/contact"
             className="mt-4 inline-flex min-h-12 items-center rounded-btn bg-stars-red px-4 text-sm font-bold"
           >
-            Donate
+            Become a Sponsor
           </Link>
         </div>
       </div>
       <div className="border-t border-white/10">
         <p className="page-wrap py-4 text-xs text-stars-mist">
-          © 2026 {site.name}. Youth baseball in {site.city}.
+          © 2026 {site.name} · {site.city} · Est. {site.founded} | {site.instagramHandle} |{" "}
+          {site.email}
         </p>
       </div>
     </footer>
