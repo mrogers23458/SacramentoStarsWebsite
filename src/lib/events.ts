@@ -92,6 +92,26 @@ const manualEvents: TeamEvent[] = [
     result: "3rd place",
   },
   {
+    id: "blue-columbus-day-shootout",
+    team: "blue",
+    title: "Columbus Day Shootout",
+    date: "October 3–4",
+    time: "TBD",
+    location: "Cosumnes Oaks High School",
+    type: "Tournament",
+    sortAt: "2026-10-03T09:00",
+  },
+  {
+    id: "red-halloween-pre-party",
+    team: "red",
+    title: "Halloween Pre-Party",
+    date: "October 17–18",
+    time: "TBD",
+    location: "Cosumnes Oaks High School",
+    type: "Tournament",
+    sortAt: "2026-10-17T09:00",
+  },
+  {
     id: "red-halloween-havoc",
     team: "red",
     title: "Halloween Havoc",
@@ -139,4 +159,44 @@ export function upcomingEvents(team?: TeamId, limit?: number) {
 
 export function completedEvents(team: TeamId) {
   return eventsForTeam(team).filter((event) => event.completed);
+}
+
+function parsePlace(result: string) {
+  const match = result.match(/(\d+)(?:st|nd|rd|th)\s+place/i);
+  return match ? Number(match[1]) : null;
+}
+
+export function teamRecord(team: TeamId) {
+  const done = completedEvents(team);
+  let wins = 0;
+  let losses = 0;
+  let ties = 0;
+
+  for (const event of done) {
+    const result = event.result ?? "";
+    if (/^win\b/i.test(result)) wins += 1;
+    else if (/^loss\b/i.test(result)) losses += 1;
+    else if (/^tie\b/i.test(result)) ties += 1;
+  }
+
+  let best: TeamEvent | undefined;
+  let bestPlace = Number.POSITIVE_INFINITY;
+  for (const event of done) {
+    if (event.type !== "Tournament" || !event.result) continue;
+    const place = parsePlace(event.result);
+    if (place == null || place >= bestPlace) continue;
+    bestPlace = place;
+    best = event;
+  }
+
+  return {
+    wins,
+    losses,
+    ties,
+    games: wins + losses + ties,
+    label: ties > 0 ? `${wins}–${losses}–${ties}` : `${wins}–${losses}`,
+    bestFinish: best
+      ? { result: best.result ?? "", title: best.title }
+      : null,
+  };
 }

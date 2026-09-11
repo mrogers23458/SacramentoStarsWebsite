@@ -5,6 +5,7 @@ import { PageHero } from "@/components/PageHero";
 import {
   completedEvents,
   isTeamId,
+  teamRecord,
   teams,
   upcomingEvents,
   type TeamId,
@@ -23,6 +24,7 @@ export default async function EventsPage(props: PageProps<"/events">) {
   const current = teams[team];
   const upcoming = upcomingEvents(team);
   const completed = completedEvents(team);
+  const record = teamRecord(team);
 
   return (
     <>
@@ -48,6 +50,39 @@ export default async function EventsPage(props: PageProps<"/events">) {
             9U Blue
           </Link>
         </nav>
+
+        <div className="mt-4 grid gap-3 md:grid-cols-2">
+          <article className="card-panel">
+            <p className="text-xs font-bold tracking-[0.12em] text-stars-navy-mid uppercase">
+              Record
+            </p>
+            <p className="mt-1 font-serif text-3xl font-bold text-stars-navy">
+              {record.games > 0 ? record.label : "—"}
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-stars-muted">
+              {record.games > 0
+                ? `${record.wins} ${record.wins === 1 ? "win" : "wins"} · ${record.losses} ${record.losses === 1 ? "loss" : "losses"}${
+                    record.ties > 0
+                      ? ` · ${record.ties} ${record.ties === 1 ? "tie" : "ties"}`
+                      : ""
+                  }`
+                : "No scored games posted yet."}
+            </p>
+          </article>
+          <article className="card-panel">
+            <p className="text-xs font-bold tracking-[0.12em] text-stars-navy-mid uppercase">
+              Highest tournament finish
+            </p>
+            <p className="mt-1 font-serif text-3xl font-bold text-stars-navy">
+              {record.bestFinish?.result ?? "—"}
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-stars-muted">
+              {record.bestFinish
+                ? record.bestFinish.title
+                : "No tournament finishes posted yet."}
+            </p>
+          </article>
+        </div>
 
         <div className="card-panel mt-4">
           <p className="text-xs font-bold tracking-[0.12em] text-stars-navy-mid uppercase">
