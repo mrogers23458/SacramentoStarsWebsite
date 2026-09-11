@@ -26,6 +26,7 @@ export const site = {
 export const navItems = [
   { href: "/about", label: "Our Story" },
   { href: "/photos", label: "Photos" },
+  { href: "/tryouts", label: "Tryouts" },
   { href: "/events", label: "Schedule" },
   { href: "/donate", label: "Levels" },
 ] as const;

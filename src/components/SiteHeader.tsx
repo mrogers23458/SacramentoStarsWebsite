@@ -44,14 +44,14 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
           {navItems.map((item) => {
             const active = pathname === item.href;
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-btn px-3 py-2 text-sm font-bold ${
+                className={`rounded-btn px-2.5 py-2 text-sm font-bold ${
                   active
                     ? "bg-stars-red text-stars-white"
                     : "text-stars-white hover:bg-stars-navy-mid"

@@ -123,6 +123,34 @@ export default function HomePage() {
         </Button>
       </section>
 
+      <section className="bg-stars-white">
+        <div className="page-wrap grid gap-8 py-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-center md:py-14">
+          <div>
+            <p className="text-xs font-semibold tracking-[0.16em] text-stars-navy-mid uppercase">
+              Spring 2027 · Private tryouts
+            </p>
+            <h2 className="mt-2 font-serif text-3xl font-bold text-stars-navy md:text-4xl">
+              Tryouts
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-stars-muted se:text-base">
+              October 28 and November 4 at Wild Rose Park. Love the game first
+              — openings for 9U and 10U, plus a new 11U team forming this
+              spring. $150/month.
+            </p>
+            <Button href="/tryouts" variant="accent" className="mt-6 se:max-w-xs">
+              Tryout information
+            </Button>
+          </div>
+          <Image
+            src="/photos/tryouts/tryout-player-fence.jpg"
+            alt="A Stars player in a helmet leans against the backstop at Wild Rose Park while teammates wait on the dirt."
+            width={2160}
+            height={2880}
+            className="w-full rounded-card object-cover"
+          />
+        </div>
+      </section>
+
       <section className="bg-stars-navy py-10 text-stars-white md:py-16">
         <div className="page-wrap">
           <p className="text-xs font-semibold tracking-[0.16em] text-stars-gold uppercase">

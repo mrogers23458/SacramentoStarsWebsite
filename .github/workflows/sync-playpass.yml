@@ -1,0 +1,43 @@
+name: Sync PlayPass schedule
+
+on:
+  schedule:
+    # 1st, 11th, and 21st at 16:00 UTC (9:00 AM Pacific)
+    - cron: "0 16 1,11,21 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Sync Delta Valley games
+        run: node scripts/sync-playpass.mjs
+
+      - name: Commit and push if the schedule changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/league-games.json
+          if git diff --staged --quiet; then
+            echo "No PlayPass schedule changes."
+            exit 0
+          fi
+          git commit -m "$(cat <<'EOF'
+          Sync Delta Valley league games from PlayPass
+
+          EOF
+          )"
+          git push
