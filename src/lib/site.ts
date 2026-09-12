@@ -28,6 +28,7 @@ export const navItems = [
   { href: "/photos", label: "Photos" },
   { href: "/tryouts", label: "Tryouts" },
   { href: "/events", label: "Schedule" },
+  { href: "/fundraising", label: "Fundraising" },
   { href: "/donate", label: "Levels" },
 ] as const;
 

@@ -51,7 +51,7 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-btn px-2.5 py-2 text-sm font-bold ${
+                className={`rounded-btn px-2 py-2 text-sm font-bold ${
                   active
                     ? "bg-stars-red text-stars-white"
                     : "text-stars-white hover:bg-stars-navy-mid"

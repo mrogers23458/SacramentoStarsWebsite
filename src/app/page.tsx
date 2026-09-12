@@ -123,6 +123,23 @@ export default function HomePage() {
         </Button>
       </section>
 
+      <section className="page-wrap py-10 md:py-14">
+        <p className="text-xs font-semibold tracking-[0.16em] text-stars-navy-mid uppercase">
+          Fall 2026
+        </p>
+        <h2 className="mt-2 font-serif text-3xl font-bold text-stars-navy md:text-4xl">
+          Fundraising
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-stars-muted se:text-base">
+          A 21-and-over raffle, an October t-shirt calendar, a home-run derby,
+          and hosted tournaments at North Natomas Regional Park. Proceeds stay
+          with the teams.
+        </p>
+        <Button href="/fundraising" variant="accent" className="mt-6 se:max-w-xs">
+          See the fundraisers
+        </Button>
+      </section>
+
       <section className="bg-stars-white">
         <div className="page-wrap grid gap-8 py-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:items-center md:py-14">
           <div>

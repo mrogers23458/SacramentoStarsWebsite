@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import { ComingSoon } from "@/components/ComingSoon";
-import { site } from "@/lib/site";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Raffle",
-  description: `A future ${site.name} fundraiser. Details coming soon.`,
+  description:
+    "The Stars booze wagon raffle is on the fundraising page. You must be 21 or older to enter.",
 };
 
 export default function RafflePage() {
-  return (
-    <ComingSoon
-      kicker={site.name}
-      title="Raffle"
-      body="This page is a placeholder. A raffle may be part of a later fundraiser. There is nothing to buy here and no tickets are on sale."
-    />
-  );
+  redirect("/fundraising");
 }
