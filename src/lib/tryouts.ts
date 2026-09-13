@@ -95,8 +95,8 @@ export const tryoutValues = [
     note: "Love builds drive. Drive builds commitment. That is the starting point here.",
   },
   {
-    title: "Development first",
-    note: "Development over ring-chasing. Kids get better because they play, not because they sit.",
+    title: "Development over rings",
+    note: "Kids get better because they play, not because they sit.",
   },
   {
     title: "Small rosters",
