@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-11T23:00:49.768Z",
+  "syncedAt": "2026-09-21T20:13:12.259Z",
   "source": "playpass",
   "games": [
     {
@@ -94,7 +94,9 @@
       "time": "1:00 PM",
       "location": "North Laguna Creek Park",
       "type": "League",
-      "sortAt": "2026-09-13T13:00"
+      "sortAt": "2026-09-13T13:00",
+      "completed": true,
+      "result": "Loss 3-14"
     },
     {
       "id": "blue-league-20260913-1300-lab-rats",
@@ -104,7 +106,9 @@
       "time": "1:00 PM",
       "location": "Alyce Norman Field 3, West Sacramento",
       "type": "League",
-      "sortAt": "2026-09-13T13:00"
+      "sortAt": "2026-09-13T13:00",
+      "completed": true,
+      "result": "Loss 3-14"
     },
     {
       "id": "blue-league-20260913-1500-the-yard",
@@ -114,7 +118,9 @@
       "time": "3:00 PM",
       "location": "Alyce Norman Field 3, West Sacramento",
       "type": "League",
-      "sortAt": "2026-09-13T15:00"
+      "sortAt": "2026-09-13T15:00",
+      "completed": true,
+      "result": "Loss 7-9"
     },
     {
       "id": "red-league-20260913-1700-wheelhouse",
@@ -124,7 +130,9 @@
       "time": "5:00 PM",
       "location": "North Laguna Creek Park",
       "type": "League",
-      "sortAt": "2026-09-13T17:00"
+      "sortAt": "2026-09-13T17:00",
+      "completed": true,
+      "result": "Loss 11-12"
     },
     {
       "id": "blue-league-20260920-0900-hard-90",
@@ -134,17 +142,19 @@
       "time": "9:00 AM",
       "location": "Alyce Norman Field 1, West Sacramento",
       "type": "League",
-      "sortAt": "2026-09-20T09:00"
+      "sortAt": "2026-09-20T09:00",
+      "completed": true
     },
     {
-      "id": "red-league-20260920-1100-top-performance",
+      "id": "red-league-20260920-1100-hard-90",
       "team": "red",
-      "title": "vs Top Performance",
+      "title": "vs Hard 90",
       "date": "September 20",
       "time": "11:00 AM",
       "location": "Alyce Norman Field 3, West Sacramento",
       "type": "League",
-      "sortAt": "2026-09-20T11:00"
+      "sortAt": "2026-09-20T11:00",
+      "completed": true
     },
     {
       "id": "blue-league-20260920-1300-wolverines",
@@ -154,27 +164,19 @@
       "time": "1:00 PM",
       "location": "Alyce Norman Field 1, West Sacramento",
       "type": "League",
-      "sortAt": "2026-09-20T13:00"
+      "sortAt": "2026-09-20T13:00",
+      "completed": true
     },
     {
-      "id": "red-league-20260920-1500-opponent-tbd",
+      "id": "red-league-20260920-1500-wheelhouse",
       "team": "red",
-      "title": "vs Opponent TBD",
+      "title": "vs Wheelhouse",
       "date": "September 20",
       "time": "3:00 PM",
       "location": "Alyce Norman Field 3, West Sacramento",
       "type": "League",
-      "sortAt": "2026-09-20T15:00"
-    },
-    {
-      "id": "blue-league-20260920-1500-sandlot",
-      "team": "blue",
-      "title": "vs Sandlot",
-      "date": "September 20",
-      "time": "3:00 PM",
-      "location": "Alyce Norman Field 1, West Sacramento",
-      "type": "League",
-      "sortAt": "2026-09-20T15:00"
+      "sortAt": "2026-09-20T15:00",
+      "completed": true
     }
   ]
 }
