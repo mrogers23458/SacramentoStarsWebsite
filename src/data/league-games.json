@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-21T20:13:12.259Z",
+  "syncedAt": "2026-10-01T20:43:21.018Z",
   "source": "playpass",
   "games": [
     {
@@ -143,7 +143,8 @@
       "location": "Alyce Norman Field 1, West Sacramento",
       "type": "League",
       "sortAt": "2026-09-20T09:00",
-      "completed": true
+      "completed": true,
+      "result": "Win 19-6"
     },
     {
       "id": "red-league-20260920-1100-hard-90",
@@ -154,7 +155,8 @@
       "location": "Alyce Norman Field 3, West Sacramento",
       "type": "League",
       "sortAt": "2026-09-20T11:00",
-      "completed": true
+      "completed": true,
+      "result": "Loss 8-22"
     },
     {
       "id": "blue-league-20260920-1300-wolverines",
@@ -165,7 +167,8 @@
       "location": "Alyce Norman Field 1, West Sacramento",
       "type": "League",
       "sortAt": "2026-09-20T13:00",
-      "completed": true
+      "completed": true,
+      "result": "Win 20-6"
     },
     {
       "id": "red-league-20260920-1500-wheelhouse",
@@ -176,7 +179,76 @@
       "location": "Alyce Norman Field 3, West Sacramento",
       "type": "League",
       "sortAt": "2026-09-20T15:00",
-      "completed": true
+      "completed": true,
+      "result": "Loss 7-9"
+    },
+    {
+      "id": "red-league-20260927-0900-samurais",
+      "team": "red",
+      "title": "vs Samurais",
+      "date": "September 27",
+      "time": "9:00 AM",
+      "location": "North Laguna Creek Park",
+      "type": "League",
+      "sortAt": "2026-09-27T09:00",
+      "completed": true,
+      "result": "Win 14-8"
+    },
+    {
+      "id": "red-league-20260927-1100-bbt",
+      "team": "red",
+      "title": "vs BBT",
+      "date": "September 27",
+      "time": "11:00 AM",
+      "location": "North Laguna Creek Park",
+      "type": "League",
+      "sortAt": "2026-09-27T11:00",
+      "completed": true,
+      "result": "Loss 5-10"
+    },
+    {
+      "id": "blue-league-20260927-1300-lab-rats",
+      "team": "blue",
+      "title": "vs Lab Rats",
+      "date": "September 27",
+      "time": "1:00 PM",
+      "location": "Alyce Norman Field 3, West Sacramento",
+      "type": "League",
+      "sortAt": "2026-09-27T13:00",
+      "completed": true,
+      "result": "Loss 6-15"
+    },
+    {
+      "id": "blue-league-20260927-1500-edh-miners",
+      "team": "blue",
+      "title": "vs EDH Miners",
+      "date": "September 27",
+      "time": "3:00 PM",
+      "location": "Alyce Norman Field 3, West Sacramento",
+      "type": "League",
+      "sortAt": "2026-09-27T15:00",
+      "completed": true,
+      "result": "Loss 5-17"
+    },
+    {
+      "id": "red-league-20261004-1200-hard-90",
+      "team": "red",
+      "title": "vs Hard 90",
+      "date": "October 4",
+      "time": "12:00 PM",
+      "location": "Alyce Norman Field 3, West Sacramento",
+      "type": "League",
+      "sortAt": "2026-10-04T12:00"
+    },
+    {
+      "id": "red-league-20261004-1600-top-performance",
+      "team": "red",
+      "title": "vs Top Performance",
+      "date": "October 4",
+      "time": "4:00 PM",
+      "location": "Alyce Norman Field 3, West Sacramento",
+      "type": "League",
+      "sortAt": "2026-10-04T16:00"
     }
   ]
 }
